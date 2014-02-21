@@ -1,0 +1,47 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02 20, 14, 9:01:52 AM
+    Author     : Arneil Leonin
+*/
+
+body {
+    color: #ffffff;
+}
+
+
+#highlight {
+    font-size: 45px;
+    margin: 0 auto;
+}
+
+.section1 {
+    min-height: 550px;
+   background-image: url('../img/banner.jpg');
+    background-size: cover;
+}
+
+.section2 {
+    padding-top: 50px;
+    min-height: 400px;
+    background-color: #1F4659;
+}
+
+.section3 {
+    min-height: 200px;
+    background-color: #ADAFAA;
+}
+
+
+.textField {
+    background-color: lightblue;
+    
+}
+
+.map_canvas{
+    width: 1000px;
+    height: 1000px;
+}
