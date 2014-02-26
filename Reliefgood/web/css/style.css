@@ -19,7 +19,7 @@ body {
 }
 
 .section1 {
-    min-height: 550px;
+    min-height: 600px;
    background-image: url('../img/banner.jpg');
     background-size: cover;
 }
@@ -27,7 +27,8 @@ body {
 .section2 {
     padding-top: 50px;
     min-height: 400px;
-    background-color: #1F4659;
+    /*background-color: #1F4659;*/
+	background-color: #000;
 }
 
 .section3 {
