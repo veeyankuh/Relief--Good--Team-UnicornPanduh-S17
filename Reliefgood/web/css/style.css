@@ -27,8 +27,7 @@ body {
 .section2 {
     padding-top: 50px;
     min-height: 400px;
-    /*background-color: #1F4659;*/
-	background-color: #000;
+    background-color: #1F4659;
 }
 
 .section3 {
@@ -45,4 +44,8 @@ body {
 .map_canvas{
     width: 1000px;
     height: 1000px;
+}
+
+.participant_full{
+    
 }
