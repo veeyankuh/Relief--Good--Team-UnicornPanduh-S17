@@ -28,7 +28,8 @@ and open the template in the editor.
                 left: 50%;
                 margin-left: -180px;
                 z-index: 5;
-                background-color: #fff;
+                /* background-color: #fff;*/
+                background-color: #002a80;
                 padding: 5px;
                 border: 1px solid #999;
             }
@@ -54,7 +55,7 @@ and open the template in the editor.
             }
 
             function calcRoute() {
-                var start = document.getElementById('start').value;
+                var start = document.getElementById('inputDefault').value;
                 var end = document.getElementById('end').value;
                 var request = {
                     origin: start,
@@ -75,6 +76,7 @@ and open the template in the editor.
                 window.location.href = marker.url;
             });
 
+
         </script>
     </head>
 
@@ -85,23 +87,36 @@ and open the template in the editor.
 
         <div class="section1">
             <br /><br />
+            <center><p id="highlight" class="red">Relief Center Listings</p></center>
             <div class="container">
-                <center><p id="highlight">Listings</p></center>
                 <div class="row">
                     <div class="col-lg-6">
                         <br>
                         <br>
                         <form class="bs-example" action="listings.html">
                             <div class="form-group">
-                                <label class="control-label" for="inputDefault">Where you are now:</label>
-                                <input type="text" class="form-control textField" id="inputDefault">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="control-label" for="inputDefault">Where you are now:</label>
+                                        <input type="text" class="form-control textField" id="inputDefault" onchange="calcRoute();">  
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label" for="inputDefault">End route:</label>
+                                        <select class="form-control textField" id="end" onchange="calcRoute();">
+                                            <option value="2401 Taft Ave. Manila, Philippines">De La Salle University - Manila</option>
+                                            <option value="San Marcelino, Ermita, Manila, Philippines">Adamson University (Student Government)</option>
+                                            <option value="Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Quezon City, Philippines">Mt. Carmel Parish</option>
+
+                                        </select>
+                                    </div>
+                                </div>
 
                             </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-info pull-right">Search Relief Centers near me!</button>
-                            </div>
-                            <br>
-                            <br>
+                            <!--  <div class="form-group">
+                                  <button type="submit" class="btn btn-info pull-right" >Search Relief Centers near me!</button>
+  
+                              </div>
+                            -->  
 
                             <br>
 
@@ -109,11 +124,11 @@ and open the template in the editor.
                                 <a href="#" class="list-group-item active">
                                     <div class="row">
                                         <div class="col-md-10">
-                                            <h4 class="list-group-item-heading">De La Salle University(USG)</h4>
+                                            <h4 class="list-group-item-heading">0.5KM - De La Salle University(COSCA)</h4>
                                             <p class="list-group-item-text">2401 Taft Ave. Manila, Philippines</p>
                                         </div>
                                         <div class ="col-md-2">
-                                            <h4 class ="list-group-item-heading">132/200</h4>
+                                            <h4 class ="list-group-item-heading" style="color: lightgreen">32/200</h4>
 
                                         </div>
                                     </div>
@@ -121,12 +136,12 @@ and open the template in the editor.
                                 <a href="#" class="list-group-item active">
                                     <div class="row">
                                         <div class="col-md-10">
-                                            <h4 class="list-group-item-heading">Adamson University (Student Government)</h4>
+                                            <h4 class="list-group-item-heading">2.3KM - Adamson University (Student Government)</h4>
                                             <p class="list-group-item-text">San Marcelino, Ermita, Manila, Philippines</p>
 
                                         </div>
                                         <div class ="col-md-2">
-                                            <h4 class ="list-group-item-heading">32/300</h4>
+                                            <h4 class ="list-group-item-heading" style="color: lightgreen">120/300</h4>
 
                                         </div>
                                     </div>
@@ -135,12 +150,12 @@ and open the template in the editor.
                                 <a href="#" class="list-group-item active">
                                     <div class="row">
                                         <div class="col-md-10">
-                                            <h4 class="list-group-item-heading">Mt. Carmel Parish</h4>
-                                            <p class="list-group-item-text">Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Quezon City, Philippines</p>
+                                            <h4 class="list-group-item-heading">5.3KM - Mt. Carmel Parish</h4>
+                                            <p class="list-group-item-text">Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Philippines</p>
                                         </div>
 
                                         <div class ="col-md-2">
-                                            <h4 class ="list-group-item-heading">232/300</h4>
+                                            <h4 class ="list-group-item-heading" style="color:lightcoral">300/300</h4>
 
                                         </div>
                                     </div>
@@ -155,23 +170,23 @@ and open the template in the editor.
 
                     <div class="col-lg-6" style="padding-top: 50px">
 
-                        <div id="panel">
+                        <!--<div id="panel" >
                             <b>Start: </b>
                             <select id="start" onchange="calcRoute();">
-                                <option value="De La Salle Univeristy, Manila">DLSU</option>
-                                <!--    <option value="University of Santo Tomas, Manila">UST</option>
-                                    <option value="Manila City Hall, Manila">Manila City Hall</option>
-                                    <option value="Rizal Park, Manila">Rizal park relief</option>
-                                -->
-                            </select>
-                            <b>End: </b>
-                            <select id="end" onchange="calcRoute();">
-                                <option value="2401 Taft Ave. Manila, Philippines">De La Salle University - Manila</option>
-                                <option value="San Marcelino, Ermita, Manila, Philippines">Adamson University (Student Government)</option>
-                                <option value="Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Quezon City, Philippines">St. Carmel Parish</option>
+                                <option value="De La Salle University, Manila">DLSU</option>
+                        <!--    <option value="University of Santo Tomas, Manila">UST</option>
+                            <option value="Manila City Hall, Manila">Manila City Hall</option>
+                            <option value="Rizal Park, Manila">Rizal park relief</option>
+                        
+                    </select>
+                    <b>End: </b>
+                    <select id="end" onchange="calcRoute();">
+                        <option value="2401 Taft Ave. Manila, Philippines">De La Salle University - Manila</option>
+                        <option value="San Marcelino, Ermita, Manila, Philippines">Adamson University (Student Government)</option>
+                        <option value="Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Quezon City, Philippines">Mt. Carmel Parish</option>
 
-                            </select>
-                        </div>
+                    </select>
+                </div>-->
                         <div id="map-canvas"></div>
 
 
@@ -188,7 +203,7 @@ and open the template in the editor.
                         <h3>Involved Organizations</h3>
                         <p>
                             Get to know more about the people 
-                            who care about those who are mostly in need
+                            who care about those who are mostly in need. Click <a href="http://www.pcnc.com.ph/ngo-list.php">here</a>!
                         </p>
 
                     </div>
@@ -223,6 +238,61 @@ and open the template in the editor.
 
         </div>
 
-        <div class="section3"><center>More about our site: afalkflaknflkafklajfkljaflkajflkajljfaljfa</center> </div>
+        <div class="section3"><center>Click <a href="http://unicornpanduh.tumblr.com">here</a> to get to know more about the developers!</center>
+
+            <div class="container">
+                <div class="row">
+                    <h2>The developers</h2>
+                    <div class="col-lg-3">
+                        <!--   <center>Sign up if you are an organization official</center>
+                        -->
+                        <h3>Rosabel Ang</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <h3>Lester Chong</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+
+
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h3>Arneil Leonin</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <h3>Vianca Villacorta</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
     </body>
 </html>
