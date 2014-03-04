@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Relief?Good! Listings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery.js" type="text/javascript"></script>
+
+
+        <style>
+            #map-canvas {
+
+                width: 550px;
+                height: 350px;
+
+            }
+            #panel {
+                position: absolute;
+                top: 5px;
+                left: 50%;
+                margin-left: -180px;
+                z-index: 5;
+                /* background-color: #fff;*/
+                background-color: #002a80;
+                padding: 5px;
+                border: 1px solid #999;
+            }
+
+        </style>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script type="text/javascript">
+
+            var directionsDisplay;
+            var directionsService = new google.maps.DirectionsService();
+            var map;
+
+            function initialize() {
+                directionsDisplay = new google.maps.DirectionsRenderer();
+                var manila = new google.maps.LatLng(14.5960, 121.000001);
+                var mapOptions = {
+                    zoom: 13,
+                    center: manila
+                }
+                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                directionsDisplay.setMap(map);
+            }
+
+            function calcRoute() {
+                var start = document.getElementById('inputDefault').value;
+                var end = document.getElementById('end').value;
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+                directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+            google.maps.event.addListener(marker, 'click', function() {
+                window.location.href = marker.url;
+            });
+
+
+        </script>
+    </head>
+
+
+    <body>
+
+
+
+        <div class="section1">
+            <br /><br />
+            <center><p id="highlight" class="red">Relief Center Listings</p></center>
+          <!--  <div class="container"> -->
+                <div class="row">
+                    <div class="col-lg-4">
+                        <br>
+                        <br>
+                        <form class="bs-example" action="listings.html">
+                            <div class="form-group">
+                                <div class="row">
+                                    
+                                    <div class="col-md-6">
+                                        <label class="control-label" for="inputDefault">Where you are now?</label>
+                                        <input type="text" class="form-control textField" id="inputDefault" onchange="calcRoute();">  
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="control-label" for="inputDefault">Relief Center:</label>
+                                        <select class="form-control textField" id="end" onchange="calcRoute();">
+                                            <option value="2401 Taft Ave. Manila, Philippines">De La Salle University - Manila</option>
+                                            <option value="San Marcelino, Ermita, Manila, Philippines">Adamson University (Student Government)</option>
+                                            <option value="Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Quezon City, Philippines">Mt. Carmel Parish</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--  <div class="form-group">
+                                  <button type="submit" class="btn btn-info pull-right" >Search Relief Centers near me!</button>
+  
+                              </div>
+                            -->  
+
+                            <br>
+
+                            <div class="list-group">
+                                <a href="#" class="list-group-item active">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <h4 class="list-group-item-heading">0.5KM - De La Salle University(COSCA)</h4>
+                                            <p class="list-group-item-text">2401 Taft Ave. Manila, Philippines</p>
+                                        </div>
+                                        <div class ="col-md-2">
+                                            <h4 class ="list-group-item-heading" style="color: lightgreen">85</h4>
+
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="#" class="list-group-item active">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <h4 class="list-group-item-heading">2.3KM - Adamson University (Student Government)</h4>
+                                            <p class="list-group-item-text">San Marcelino, Ermita, Manila, Philippines</p>
+
+                                        </div>
+                                        <div class ="col-md-2">
+                                            <h4 class ="list-group-item-heading" style="color: lightgreen">50</h4>
+
+                                        </div>
+                                    </div>
+                                </a>
+
+                                <a href="#" class="list-group-item active">
+                                    <div class="row">
+                                        <div class="col-md-10">
+                                            <h4 class="list-group-item-heading">5.3KM - Mt. Carmel Parish</h4>
+                                            <p class="list-group-item-text">Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Philippines</p>
+                                        </div>
+
+                                        <div class ="col-md-2">
+                                            <h4 class ="list-group-item-heading" style="color:lightcoral">0</h4>
+
+                                        </div>
+                                    </div>
+                                </a>
+
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <div class="col-lg-8" style="padding-top: 50px">
+
+                        <!--<div id="panel" >
+                            <b>Start: </b>
+                            <select id="start" onchange="calcRoute();">
+                                <option value="De La Salle University, Manila">DLSU</option>
+                        <!--    <option value="University of Santo Tomas, Manila">UST</option>
+                            <option value="Manila City Hall, Manila">Manila City Hall</option>
+                            <option value="Rizal Park, Manila">Rizal park relief</option>
+                        
+                    </select>
+                    <b>End: </b>
+                    <select id="end" onchange="calcRoute();">
+                        <option value="2401 Taft Ave. Manila, Philippines">De La Salle University - Manila</option>
+                        <option value="San Marcelino, Ermita, Manila, Philippines">Adamson University (Student Government)</option>
+                        <option value="Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Quezon City, Philippines">Mt. Carmel Parish</option>
+
+                    </select>
+                </div>-->
+                        <div id="map-canvas"></div>
+
+
+                    </div>
+                </div>
+       <!--     </div> -->
+        </div>
+        <div class="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <!--   <center>Sign up if you are an organization official</center>
+                        -->
+                        <h3>Involved Organizations</h3>
+                        <p>
+                            Get to know more about the people 
+                            who care about those who are mostly in need. Click <a href="http://www.pcnc.com.ph/ngo-list.php">here</a>!
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h3>Your importance as a Volunteer</h3>
+                        <p>
+                            Get to know your role in society by helping 
+                            the people in need
+                        </p>
+
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h3>What this website can do for everyone!</h3>
+                        <p>
+                            This website is not just a simple website. 
+                            With the efforts of hundreds, we are so osom
+                        </p>
+
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+        <div class="section3"><center>Click <a href="http://unicornpanduh.tumblr.com">here</a> to get to know more about the developers!</center>
+
+            <div class="container">
+                <div class="row">
+                    <h2>The developers</h2>
+                    <div class="col-lg-3">
+                        <!--   <center>Sign up if you are an organization official</center>
+                        -->
+                        <h3>Rosabel Ang</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <h3>Lester Chong</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+
+
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h3>Arneil Leonin</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <h3>Vianca Villacorta</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </body>
+</html>
