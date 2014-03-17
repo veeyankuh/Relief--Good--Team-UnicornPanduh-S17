@@ -8,25 +8,35 @@ and open the template in the editor.
     Author     : Arneil Leonin
 */
 
+.banner {
+    background-image: url('../images/ortigas1.jpg');
+    background-size: cover;
+    background-position: right;
+    min-height: 50px;
+}
+
+
 body {
     color: #ffffff;
 }
 
-
+/*
 #highlight {
     font-size: 45px;
     margin: 0 auto;
-    //background-color: rgba(255,0,0,0.8);
-    
-}
+    background-color: rgba(255,0,0,0.8);
 
+}
+*/
 .red {
     background-color: rgba(255,0,0,0.8);
+    font-size: 45px;
+    margin: 0 auto;
 }
 
 .section1 {
     min-height: 600px;
-   background-image: url('../img/banner.jpg');
+    background-image: url('../img/sunrise2.jpg');
     background-size: cover;
 }
 
@@ -44,7 +54,7 @@ body {
 
 .textField {
     background-color: lightblue;
-    
+
 }
 
 .map_canvas{
@@ -53,5 +63,23 @@ body {
 }
 
 .participant_full{
-    
+
+}
+
+
+#map-canvas{
+
+    width: 890px;
+    height: 500px;
+}
+
+#panel {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -180px;
+    z-index: 5;
+    background-color: #002a80;
+    padding: 5px;
+    border: 10px solid #999;
 }
