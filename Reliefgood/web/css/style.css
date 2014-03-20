@@ -1,23 +1,14 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
+
 /* 
     Created on : 02 20, 14, 9:01:52 AM
     Author     : Arneil Leonin
 */
 
 .banner {
-    background-image: url('../images/ortigas1.jpg');
+    background-image: url('../img/sunrise2.jpg');
     background-size: cover;
     background-position: right;
-    min-height: 50px;
-}
-
-
-body {
-    color: #ffffff;
+    min-height: 170px;
 }
 
 /*
@@ -42,15 +33,36 @@ body {
 
 .section2 {
     padding-top: 0.5px;
-    min-height: 300px;
-    background-color: #1F4659;
+    min-height: 600px;
+    background-image: url('../img/sunrise2.jpg');
+    background-size: cover;
+
+    /*background-color: #1F4659;*/
 }
 
 .section3 {
-    min-height: 300px;
-    background-color: #ADAFAA;
+    min-height: 600px;
+    background-image: url('../img/stick1.png');
+    background-size: cover;
 }
 
+.section4 {
+    min-height: 600px;
+    background-image: url('../img/ngo2.jpg');
+    background-size: cover;
+}
+
+.section5 {
+    min-height: 600px;
+    background-image: url('../img/helpinghand3.jpg');
+    background-size: cover;
+}
+
+.section6 {
+    min-height: 600px;
+    background-image: url('../img/RG2.png');
+    background-size: contain;
+}
 
 .textField {
     background-color: lightblue;
@@ -69,12 +81,14 @@ body {
 
 #map-canvas{
 
-    width: 890px;
-    height: 500px;
+    /*width: 890px;
+    height: 500px;*/
+    min-width: 100%;
+    min-height: 100%;
 }
 
 #panel {
-    position: absolute;
+    /* position: absolute;*/
     top: 5px;
     left: 50%;
     margin-left: -180px;
@@ -82,4 +96,62 @@ body {
     background-color: #002a80;
     padding: 5px;
     border: 10px solid #999;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.inner {
+    position: absolute;
+}
+
+#wrapper { position: relative; height: 80%;}
+#over_map { position: absolute; top: 10px; left: 10px; z-index: 99; }
+
+.portfolio{
+    min-height: 200px;
+    background-color: #cccccc;
+    color: #fff !important;
+}
+
+.portfolio a {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.portfolio a:hover {
+    color: #000;
+}
+
+#menu1 {
+    background-image: url('../img/sunrise2.jpg');
+    background-size: cover;
+}
+
+#menu2 {
+    background-image: url('../img/stick1.png');
+    background-size: inherit;
+}
+#menu3 {
+    background-image: url('../img/ngo1.jpg');
+    background-size: cover;
+}
+#menu4 {
+    background-image: url('../img/ngo2.jpg');
+    background-size: cover;
+}
+#menu5 {
+    background-image: url('../img/RG2.png');
+    background-size: cover;
+}
+
+.logowrapper{
+    width: 300px;
+    height: 100px;
+    background-image: url('../img/RG1.png');
 }
