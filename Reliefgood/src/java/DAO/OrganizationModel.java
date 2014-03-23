@@ -1,35 +1,36 @@
+package MODEL;
 
-public class OrganizationContainer {
-	private int id;
-	private String orgName;
-	private int capacity;
+public class OrganizationModel {
+	private int ID;
+	private String orgName; 
 	private String address;
+	private int capacity;
 	private String username;
 	private String password;
 	
-	public int getId() {
-		return id;
+	public int getID() {
+		return ID;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setID(int iD) {
+		ID = iD;
 	}
 	public String getOrgName() {
 		return orgName;
 	}
-	public void setOrgName(String name) {
-		this.orgName = name;
-	}
-	public int getCapacity() {
-		return capacity;
-	}
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
+	public void setOrgName(String orgName) {
+		this.orgName = orgName;
 	}
 	public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
+	}
+	public int getCapacity() {
+		return capacity;
+	}
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
 	}
 	public String getUsername() {
 		return username;
