@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Relief?Good! Listings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="images/favicon_1.ico">
+        <link rel="stylesheet" href="css/flat-ui.css">
+
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery.js" type="text/javascript"></script>
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script type="text/javascript">
+
+            var directionsDisplay;
+            var directionsService = new google.maps.DirectionsService();
+            var map;
+
+            function initialize() {
+                directionsDisplay = new google.maps.DirectionsRenderer();
+                var manila = new google.maps.LatLng(14.5960, 121.000001);
+                var mapOptions = {
+                    zoom: 13,
+                    center: manila
+                }
+                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                directionsDisplay.setMap(map);
+            }
+
+            function calcRoute() {
+                var start = document.getElementById('inputDefault').value;
+                var end = document.getElementById('end').value;
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+                directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+            google.maps.event.addListener(marker, 'click', function() {
+                window.location.href = marker.url;
+            });
+
+
+        </script>
+    </head>
+    
+    <body>
+        <div class="banner">
+
+        <!-- <div class="container" style="padding-top: 3px;"> -->
+            <div class="col-lg-12">
+                <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+                            <span class="sr-only">Toggle navigation</span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar-collapse-01">
+                        <ul class="nav navbar-nav navbar-left">
+                            <li>
+                                <a href="#">Relief? Good!</a>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    Register
+                                    <b class="caret"></b>
+                                </a>
+                                <span class="dropdown-arrow"></span>
+                                <ul class="dropdown-menu" style="padding: 5px;">
+                                    <li style="padding-bottom: 4px;">
+                                        <input type="text" class="form-control" value placeholder="First Name" style="width: 200px;">
+                                    </li>
+                                    <li style="padding-bottom: 4px;">
+                                            <input type="text" class="form-control" value placeholder="Last Name" style="width: 200px;">
+                                        </li>
+                                        <li style="padding-bottom: 4px;">
+                                            <input type="text" class="form-control" value placeholder="Business Name" style="width: 200px;">
+                                        </li>
+                                        <li style="padding-bottom: 4px;">
+                                            <input type="email" class="form-control" value placeholder="Email" style="width: 200px;">
+                                        </li>
+                                        <li style="padding-bottom: 4px;">
+                                            <input type="password" class="form-control" value placeholder="Password" style="width: 200px;">
+                                        </li>
+                                        <a class="btn btn-primary btn-md btn-block" href="#">Register</a>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <blockquote style = "color: #ffffff; background-color: rgba(0,0,255,0.6);" >
+
+                    Go help in areas where you are needed to with Relief? Good!
+                    <br/>
+
+                    - Dale Carnegie
+                </blockquote>
+            </div>
+        
+
+        <div class="section1">
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-lg-4">
+                    <form class="bs-example" action="listings.html">
+                        <div class="form-group">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <label class="control-label" for="inputDefault">Where you are now?</label>
+                                    <input type="text" class="form-control textField" id="inputDefault" onchange="calcRoute();">  
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label" for="inputDefault">Relief Center:</label>
+                                    <select class="form-control textField" id="end" onchange="calcRoute();">
+                                        <option value="2401 Taft Ave. Manila, Philippines">De La Salle University - Manila</option>
+                                        <option value="San Marcelino, Ermita, Manila, Philippines">Adamson University (Student Government)</option>
+                                        <option value="Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Quezon City, Philippines">Mt. Carmel Parish</option>
+
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <div class="list-group">
+                            <a href="#" class="list-group-item active">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <h4 class="list-group-item-heading">0.5KM - De La Salle University(COSCA)</h4>
+                                        <p class="list-group-item-text">2401 Taft Ave. Manila, Philippines</p>
+                                    </div>
+                                    <div class ="col-md-2">
+                                        <h4 class ="list-group-item-heading" style="color: lightgreen">85</h4>
+
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" class="list-group-item active">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <h4 class="list-group-item-heading">2.3KM - Adamson University (Student Government)</h4>
+                                        <p class="list-group-item-text">San Marcelino, Ermita, Manila, Philippines</p>
+
+                                    </div>
+                                    <div class ="col-md-2">
+                                        <h4 class ="list-group-item-heading" style="color: lightgreen">50</h4>
+
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="#" class="list-group-item active">
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <h4 class="list-group-item-heading">5.3KM - Mt. Carmel Parish</h4>
+                                        <p class="list-group-item-text">Dona Juana Ave. (formerly Broadway Ave.) corner 4th/5th St., New Manila, Philippines</p>
+                                    </div>
+
+                                    <div class ="col-md-2">
+                                        <h4 class ="list-group-item-heading" style="color:lightcoral">0</h4>
+
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="col-lg-8" style="padding-top: 1px">
+
+
+                    <div id="map-canvas"></div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="section2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <!--   <center>Sign up if you are an organization official</center>
+                        -->
+                        <h3>Involved Organizations</h3>
+                        <p>
+                            Get to know more about the groups of people 
+                            who care about those who are mostly in need. 
+                            These organizations dedicate their time and resources
+                            to help those who are affected mostly by disasters. 
+                            They are the ones who lift others' spirits 
+                            
+                            <br/>
+                            if you like to know more about them,
+                            
+                            Click <a href="http://www.pcnc.com.ph/ngo-list.php"> here </a>!
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h3>Your importance as being a Volunteer</h3>
+                        <p>
+                            Get to know your role in society by helping 
+                            the people in need. Be the one who promotes and empowers
+                            TRUE CHANGE to the society through taking time to help people.
+                            
+                        </p>
+
+
+                    </div>
+
+                    <div class="col-lg-4">
+                        <h3>What this website can do for everyone!</h3>
+                        <p>
+                            This website is not just a simple website. 
+                            With the efforts of hundreds, we can be able to make
+                            a major change in the society. Track 
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section3"><center> Click <a href="http://unicornpanduh.tumblr.com">here</a> to get to know more about the developers!</center>
+
+            <div class="container">
+                <div class="row">
+                    <h2>The developers</h2>
+                    <div class="col-lg-3">
+                        <!--   <center>Sign up if you are an organization official</center>
+                        -->
+                        <h3>Rosabel Ang</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+
+                    </div>
+
+                    <div class="col-lg-3">
+
+                        <h3>Lester Chong</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <h3>Arneil Leonin</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+                    </div>
+                    <div class="col-lg-3">
+
+                        <h3>Vianca Villacorta</h3>
+                        <p>
+                            A person taking up Bachelor of Science in Computer
+                            Science with Specialization in Software Technology
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
