@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Relief?Good! Listings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="images/favicon_1.ico">
+
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery.js" type="text/javascript"></script>
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script type="text/javascript">
+
+            var directionsDisplay;
+            var directionsService = new google.maps.DirectionsService();
+            var map;
+
+            function initialize() {
+                directionsDisplay = new google.maps.DirectionsRenderer();
+                var manila = new google.maps.LatLng(14.5960, 121.000001);
+                var mapOptions = {
+                    zoom: 13,
+                    center: manila
+                }
+                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                directionsDisplay.setMap(map);
+            }
+
+            function calcRoute() {
+                var start = document.getElementById('inputDefault').value;
+                var end = document.getElementById('end').value;
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+                directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+            google.maps.event.addListener(marker, 'click', function() {
+                w///////////////////////indow.location.href = marker.url;
+            });
+
+
+        </script>
+    </head>
+
+    <body>
+        <div class="container-fluid " style="background-color: #77bac8; height: 100px">
+            <img src="img/RG1.png" height="15%" style="position: absolute"/>
+            <div class="pull-right" style="margin-top: 30px;">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Log In <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><label class="col-md-4">User: </label><div class="col-md-8"><input type="text" class="form-control" /></div></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+                &nbsp;<button class="btn btn-primary form-inline">Sign Up</button>
+            </div>
+        </div>
+        <div id="wrapper">
+            <div id="map-canvas"></div>
+            <div id="over_map" style="margin-top: 30px;">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-7 col-xs-7">
+
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Relief Centers Near YOU!</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="col-md-9" style="padding-right: 0px; padding-left: 0px">
+                                        <input class="form-control" placeholder="Where are you?"/>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button class="btn btn-primary" style="width: 100%">GO</button>
+                                    </div>
+                                    <br />
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <td>Distance</td>
+                                        <td>Location</td>
+                                        <td>Volunteers Needed</td>
+                                        </thead>
+                                        <tr>
+                                            <td>
+                                                0.5 KM
+                                            </td>
+                                            <td>De La Salle University(COSCA)
+                                                2401 Taft Ave. Manila, Philippines
+                                            </td>
+                                            <td>
+                                                85
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>
+                                                1.2 KM
+                                            </td>
+                                            <td>
+                                                Manila City Hall
+                                                1234 St. Manila, Philippines
+                                            </td>
+                                            <td>
+                                                32
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                3.2 KM
+                                            </td>
+                                            <td>
+                                                The Holy Spirit
+                                                4321 St. Quirino Avenue, Manila, Philippines
+                                            </td>
+                                            <td>
+                                                0
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid ">
+            <div class="row">
+                <div class="col-lg-2 col-md-3 col-xs-3 portfolio" id="menu1"><center>
+
+                        <br /><br /><a href="#WhatWebsite">What is this website for?</a></center>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-3 portfolio" id="menu2"><center>
+                        <br /><br /><a href="#VolunteerImportance">Your importance as being a Volunteer</a></center>
+                </div>
+                <div class="col-lg-2 col-md-3 col-xs-3 portfolio" id="menu3"><center>
+                        <br /><br /><a href="#Organizations">Involved Organizations</a></center>
+                </div>
+                <div class="col-lg-3 col-md-3 col-xs-3 portfolio" id="menu4"><center>
+                        <br /><br /><a href="#TheHelp">What this website can do for everyone!</a></center>
+                </div>
+                <div class="col-lg-2 col-md-3 col-xs-3 portfolio" id="menu5"><center>
+                        <br /><br /><a href="#TheDevelopers">The developers</a></center>
+                </div>
+            </div>
+            <div class="navbar" style="margin-bottom: 0px">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#WhatWebsite">What is this website for?</a></li>
+                    <li><a href="#VolunteerImportance">Your importance as being a Volunteer</a></li>
+                    <li><a href="#Organizations">Involved Organizations</a></li>
+                    <li><a href="#TheHelp">What this website can do for everyone!</a></li>
+                    <li><a href="#TheDevelopers">The developers</a></li>
+
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+        <div class="section1" id="WhatWebsite"><h1>About ReliefGood</h1>
+
+            <div class="container">
+                <div class="row">
+                    <h2></h2>
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+                            <h3>Locate the nearest relief centers near you!</h3>
+                            <p>
+                                Hello
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+
+                            <h3>Find out different places where organizations are operating</h3>
+                            <p>
+                                Oversaw the research of the different interests and 
+                                concerns of the students for better implementation 
+                                of projects and activities for the batch and maximization 
+                                of the school’s services and facilities. 
+                                Spearheaded projects for the batch talks, 
+                                specialization orientations and freedom of speech activities
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+                            <h3>Know the shortest distance to your desired relief center</h3>
+                            <p>
+                                Headed the project of providing a newsletter called 
+                                the “Bits and Bytes” for the members of the organization 
+                                for them to be oriented on the current technological trends. 
+                                Researched and wrote for the contents of the newsletter. 
+                                Became the official Editor-In-Chief and the assistant concept designer
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+                            <h3>Know if relief centers are in need of volunteers!</h3>
+                            <p>
+                                Python 101, Ignition Web Hackathon, Shell Eco Marathon Asia 2014
+                                Technology SUmmit 2013, Leadership Excellence and Dynamism, Dynamic 
+                                LSCS Leadership Seminar 2013
+                                That Seminar
+                                THis Seminar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section2" id="VolunteerImportance"><h1>Why be a volunteer?</h1>
+
+            <div class="container">
+                <div class="row">
+                    <h2></h2>
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+
+                            <h3>Share your thoughts</h3>
+                            <p>
+                                Oversees the overall direction of the organization 
+                                through following its vision and mission to serve 
+                                the College of Computer Studies and De La Salle University. 
+                                Major Projects initiated: Co-Head of Technology 
+                                Summit 2013, LSCS-Technokids Philippines IT Cup 2014 
+                                and Multimedia Expo 2014
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+                            <h3>Help your countrymen</h3>
+                            <p>
+                                Oversaw the research of the different interests and 
+                                concerns of the students for better implementation 
+                                of projects and activities for the batch and maximization 
+                                of the school’s services and facilities. 
+                                Spearheaded projects for the batch talks, 
+                                specialization orientations and freedom of speech activities
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+                            <h3>We're all in this together</h3>
+                            <p>
+                                Headed the project of providing a newsletter called 
+                                the “Bits and Bytes” for the members of the organization 
+                                for them to be oriented on the current technological trends. 
+                                Researched and wrote for the contents of the newsletter. 
+                                Became the official Editor-In-Chief and the assistant concept designer
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+
+                            <h3>Because you have the power</h3>
+                            <p>
+                                Python 101, Ignition Web Hackathon, Shell Eco Marathon Asia 2014
+                                Technology SUmmit 2013, Leadership Excellence and Dynamism, Dynamic 
+                                LSCS Leadership Seminar 2013
+                                That Seminar
+                                THis Seminar
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="section3" id="Organizations"><h1>Our partners</h1>
+
+            <div class="container">
+                <div class="row">
+                    <h2></h2>
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+
+                            <h3>Here's a list of the orgranization whom are willing to help</h3>
+                            <p>
+                                Philippine Red Cross
+                                <br/>
+                                Arneil Foundation
+                                <br/>
+                                COSCA 
+                                <br/>
+                                SM Care
+                                <br/>
+                                Samson Relief Operations
+                                <br/>
+                                United Nations
+                                <br/>
+                                Tacloban Peeps
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+                            <h3></h3>
+                            <p>
+
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3" >
+                        <div class="tile" style="text-align: left;">
+                            <h3></h3>
+                            <p>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+
+                            <h3></h3>
+                            <p>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <div class="section4" id="TheDevelopers"><h1>The Creators</h1>
+
+            <div class="container">
+                <div class="row">
+                    <h2></h2>
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+                            <h3>Rosabel Ang</h3>
+                            <p>
+                                A person taking up Bachelor of Science in Computer
+                                Science with Specialization in Software Technology
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+
+                            <h3>Lester Chong</h3>
+                            <p>
+                                A person taking up Bachelor of Science in Computer
+                                Science with Specialization in Software Technology
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+                            <h3>Arneil Leonin</h3>
+                            <p>
+                                A person taking up Bachelor of Science in Computer
+                                Science with Specialization in Software Technology
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <div class="tile" style="text-align: left;">
+
+                            <h3>Vianca Villacorta</h3>
+                            <p>
+                                A person taking up Bachelor of Science in Computer
+                                Science with Specialization in Software Technology
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>
