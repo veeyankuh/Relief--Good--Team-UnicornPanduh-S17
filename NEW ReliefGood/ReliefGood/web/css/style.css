@@ -155,7 +155,7 @@ body {
 /*Accordion style*/
 .accordion{
 	width: 600px;
-	margin: 10px auto 30px auto;
+	/*margin: 10px auto 30px auto;*/
 	text-align: left;
 }
 
@@ -285,5 +285,5 @@ background-color:#EAF2D3;
 }
 
 .accordion table{
-	padding:20px;
+	margin: 0px 20px;
 }
