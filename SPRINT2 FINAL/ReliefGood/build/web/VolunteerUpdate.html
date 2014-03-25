@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Relief?Good! Listings</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="shortcut icon" href="images/favicon_1.ico">
+
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/jquery/jquery.js" type="text/javascript"></script>
+
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+        <script type="text/javascript">
+
+            var directionsDisplay;
+            var directionsService = new google.maps.DirectionsService();
+            var map;
+
+            function initialize() {
+                directionsDisplay = new google.maps.DirectionsRenderer();
+                var manila = new google.maps.LatLng(14.5960, 121.000001);
+                var mapOptions = {
+                    zoom: 13,
+                    center: manila
+                }
+                map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+                directionsDisplay.setMap(map);
+            }
+
+            function calcRoute() {
+                var start = document.getElementById('inputDefault').value;
+                var end = document.getElementById('end').value;
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: google.maps.TravelMode.DRIVING
+                };
+                directionsService.route(request, function(response, status) {
+                    if (status == google.maps.DirectionsStatus.OK) {
+                        directionsDisplay.setDirections(response);
+                    }
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+
+            google.maps.event.addDomListener(window, 'load', initialize);
+            google.maps.event.addListener(marker, 'click', function() {
+                w///////////////////////indow.location.href = marker.url;
+            });
+
+
+        </script>
+    </head>
+
+    <body>
+        <div class="container-fluid " style="background-color: #77bac8; height: 100px">
+            <img src="img/RG1.png" height="15%" style="position: absolute"/>
+            <div class="pull-right" style="margin-top: 30px;">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Log In <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><div class="form-group"><label class="col-md-4">User: </label><div class="col-md-8"><input type="text" class="form-control" /></div></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                </ul>
+                &nbsp;<button class="btn btn-primary form-inline">Sign Up</button>
+            </div>
+        </div>
+
+        <div class="updateSection" id="WhatWebsite">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-xs-6" style="margin-top: 200px">
+                        <h1 style="color: #fff">Branch Volunteers</h1>
+                        <div class="col-md-7" style="padding-left: 0px"><input type="text" class="form-control" /></div><br />
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-xs-6">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

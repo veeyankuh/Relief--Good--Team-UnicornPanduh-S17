@@ -1,0 +1,170 @@
+/* 
+    Created on : 02 20, 14, 9:01:52 AM
+    Author     : Arneil Leonin
+*/
+
+.updateSection{
+    padding-top: 0.5px;
+    min-height: 550px;
+    background-image: url('../img/joy1.jpg');
+    background-position: inherit;
+    overflow: hidden;
+
+}
+
+a {
+    text-decoration: none !important;
+}
+
+table {
+    color: #fff !important;
+}
+
+table a {
+    color: #fff !important;
+}
+
+.tile {
+    padding:10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgba(70,70,255,0.8);
+}
+
+.banner {
+    background-image: url('../img/sunrise2.jpg');
+    background-size: cover;
+    background-position: right;
+    min-height: 170px;
+}
+
+
+.red {
+    background-color: rgba(255,0,0,0.8);
+    font-size: 45px;
+    margin: 0 auto;
+}
+
+.section1 {
+    padding-top: 0.5px;
+    min-height: 600px;
+    background-image: url('../img/phmap.png');
+    background-position: inherit;
+
+}
+/*Why be a volunteer*/ 
+.section2 {
+    min-height: 600px;
+    background-image: url('../img/volunteers2.jpg');
+    background-size: cover;
+}
+
+.section3 {
+    min-height: 600px;
+    background-image: url('../img/ngo2.jpg');
+    background-size: cover;
+}
+
+.section4 {
+    min-height: 600px;
+    background-image: url('../img/devs.jpg');
+    background-size: cover;
+}
+
+
+.textField {
+    background-color: lightblue;
+
+}
+
+.map_canvas{
+    width: 1000px;
+    height: 1000px;
+}
+
+.participant_full{
+
+}
+
+
+#map-canvas{
+
+    /*width: 890px;
+    height: 500px;*/
+    min-width: 100%;
+    min-height: 100%;
+}
+
+#panel {
+    /* position: absolute;*/
+    top: 5px;
+    left: 50%;
+    margin-left: -180px;
+    z-index: 5;
+    background-color: #002a80;
+    padding: 5px;
+    border: 10px solid #999;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+.inner {
+    position: absolute;
+}
+
+#wrapper { position: relative; height: 75%;}
+#over_map { position: absolute; top: 10px; left: 10px; z-index: 99; }
+
+.portfolio{
+    min-height: 150px;
+    background-color: #cccccc;
+    color: #fff !important;
+}
+
+.portfolio a {
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.portfolio a:hover {
+    color: #000;
+}
+
+#menu1 {
+    /*background-image: url('../img/sunrise2.jpg');*/
+    background-size: cover;
+    background-color: #08c;
+}
+
+#menu2 {
+    /*background-image: url('../img/stick1.png');*/
+    background-size: inherit;
+    background-color: #08c;
+}
+#menu3 {
+    /*background-image: url('../img/ngo1.jpg');*/
+    background-size: cover;
+    background-color: #08c;
+}
+#menu4 {
+    /*background-image: url('../img/ngo2.jpg');*/
+    background-size: cover;
+    background-color: #08c;
+}
+#menu5 {
+    /*background-image: url('../img/RG2.png');*/
+    background-size: cover;
+    background-color: #08c;
+}
+
+.logowrapper{
+    width: 300px;
+    height: 100px;
+    background-image: url('../img/RG1.png');
+}
