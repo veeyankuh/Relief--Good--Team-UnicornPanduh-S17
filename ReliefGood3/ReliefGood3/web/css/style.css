@@ -1,0 +1,203 @@
+/* ==== Google font ==== */
+@import url('http://fonts.googleapis.com/css?family=Lato:400,300,700,900');
+/* === fontawesome === */
+@import url('font-awesome.css');
+/* ==== overwrite bootstrap standard ==== */
+@import url('overwrite.css');
+@import url('animate.css');
+
+@import url("../fonts/fontawesome/font-awesome.css");
+@import url("../fonts/lato/stylesheet.css");
+/*==========================================================================
+  General
+  ========================================================================== */
+
+.footer {
+    background:#3d3d3d;
+    color: #aaaaaa;
+    padding: 30px;
+
+}
+
+.customi {
+    margin-bottom: 10px; 
+    font-size: 6em; 
+    color: #cccccc;
+}
+
+.footer ul{
+    padding-left: 0px;
+}
+
+.footer li {
+    list-style: none;
+}
+
+.creatorsblog {
+    min-height: 300px;
+    background-image: url('../img/educ_dlsu.JPG');
+    background-size: cover;
+    padding: 60px;
+    position: relative;
+}
+
+.creatorsblog span {
+    color: #fff;
+    font-size: 30px;
+}
+
+.creatorscontent {
+    padding: 20px;
+    min-height: 200px;
+    margin-bottom: 60px;
+}
+
+.overlay-background {
+    background: url(../img/overlay-background.png) repeat left top;
+    position: relative;
+    top: 0;
+    height: 100%;
+    z-index: 999 !important;
+}
+
+.title {
+    text-transform: capitalize;
+    color: #fff;
+}
+
+.ReliefGoodAbout {
+    min-height: 300px;
+    background-image: url('../img/reliefgood.jpg');
+    background-size: cover;
+    padding: 60px;
+}
+
+.whyrelief {
+    background-image: url('../img/helpinghand3.jpg');
+    min-height: 300px;
+    background-size: cover;
+    padding: 60px;
+}
+
+.copyrights {
+    background: #666666;
+    height: 40px;
+    padding: 10px;
+    color: #fff;
+}
+
+.navbar-brand {
+    padding-top: 0px;
+}
+
+body {
+    padding-top: 50px;
+    color:#777;
+    background: #f7f7f7;
+    font-size: 14px;
+    line-height: 1.6em;
+    font-weight: 300;
+    text-shadow: none;
+    font-family: "Lato", Helvetica, Arial, sans-serif !important;
+}
+
+.clear {
+    clear: both;
+}
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: 'Lato', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    color:#222;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-style: normal;
+    margin: 0 0 20px 0;
+}
+h1 { font-size: 40px; line-height: 30px; }
+h2 { font-size: 32px; }
+h3 { font-size: 24px; }
+h4 { font-size: 18px; }
+h5 { font-size: 16px; }
+.txt-light { font-weight: 300; }
+.txt-regular { font-weight: 400; }
+.txt-bold { font-weight: 700; }
+.txt-uppercase { text-transform: uppercase; }
+
+blockquote {
+    font-family: Georgia, serif;
+}
+
+blockquote.bigquote {
+    border: none;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1em;
+}
+
+.text-bold {
+    font-weight: 900;
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display: block;
+}
+
+
+small {
+    font-size: 70%;
+    font-weight: 100;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+:focus {
+    outline: none;
+}
+
+.color-white.txt-shadow {
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.t-uppercase {
+    text-transform: uppercase;
+}
+
+/*==========================================================================
+  Misc & Adjust 
+ ========================================================================== */
+.row {
+    z-index: 9999;
+}
+
+#map-canvas{
+
+    /*width: 890px;
+    height: 500px;*/
+    min-width: 100%;
+    min-height: 600px;
+}
+
+#panel {
+    /* position: absolute;*/
+    top: 5px;
+    left: 50%;
+    margin-left: -180px;
+    z-index: 5;
+    background-color: #002a80;
+    padding: 5px;
+    border: 10px solid #999;
+}
+
+#wrapper { position: relative; height: 75%;}
+#over_map { position: absolute; top: 10px; left: 10px; z-index: 99; 
+            color: #fff !important; 
+}
+
+#over_map a {
+    color: #fff !important; 
+}
